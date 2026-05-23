@@ -1253,7 +1253,6 @@ function Footer({ onScrollTo }: FooterProps) {
           <div className="font-body text-xs opacity-40">
             © {new Date().getFullYear()} ADPET Investment Company Nigeria Limited. All rights reserved.
           </div>
-          <div className="font-body text-xs opacity-40">RC: 7202166 · Registered in Nigeria</div>
         </div>
       </div>
     </footer>
