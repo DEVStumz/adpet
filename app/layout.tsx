@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://adpet.vercel.app"; // replace with your actual domain
+const BASE_URL = "https://adpet.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -23,15 +23,17 @@ export const metadata: Metadata = {
   description:
     "Nigeria's premier multi-disciplinary investment company spanning Real Estate, Building Materials, Automobile, and General Contracts. CAC Registered · RC: 7202166.",
   keywords: [
-    "ADPET", "investment company Nigeria", "real estate Nigeria",
-    "building materials", "automobile dealership Nigeria",
-    "general contracts", "#",
+    "ADPET",
+    "investment company Nigeria",
+    "real estate Nigeria",
+    "building materials",
+    "automobile dealership Nigeria",
+    "general contracts",
   ],
   authors: [{ name: "ADPET Investment Company Nigeria Limited" }],
   creator: "ADPET Investment Company Nigeria Limited",
   publisher: "ADPET Investment Company Nigeria Limited",
 
-  // ── Open Graph (Facebook, LinkedIn, WhatsApp, Slack, Discord…) ──
   openGraph: {
     type: "website",
     url: BASE_URL,
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
       "Premier multi-disciplinary investment company delivering excellence across Nigeria's key economic sectors.",
     images: [
       {
-        url: "public/images/adpetlogo.jpeg",
+        url: "/images/adpetlogo.jpeg",
         width: 1200,
         height: 630,
         alt: "ADPET Investment Company logo",
@@ -51,23 +53,18 @@ export const metadata: Metadata = {
     locale: "en_NG",
   },
 
-  // ── Twitter / X Card ──
   twitter: {
     card: "summary_large_image",
-    site: "@adpetinvestments", // replace with your actual handle or remove
-    creator: "@adpetinvestments",
     title: "ADPET Investment Company Nigeria",
     description:
       "Premier multi-disciplinary investment company delivering excellence across Nigeria's key economic sectors.",
-    images: [" public/images/adpetlogo.jpeg"],
+    images: ["/images/adpetlogo.jpeg"],
   },
 
-  // ── Canonical & alternates ──
   alternates: {
-    //canonical: BASE_URL,
+    canonical: BASE_URL,
   },
 
-  // ── Robots ──
   robots: {
     index: true,
     follow: true,
@@ -79,19 +76,16 @@ export const metadata: Metadata = {
     },
   },
 
-  // ── Favicon / app icons ──
- icons: {
-  icon: [
-    { url: " public/images/adpetlogo.jpeg", type: "image/jpeg" },
-    { url: " public/images/adpetlogo.jpeg", sizes: "32x32", type: "image/jpeg" },
-    { url: " public/images/adpetlogo.jpeg", sizes: "16x16", type: "image/jpeg" },
-  ],
-  shortcut: " public/images/adpetlogo.jpeg",
-  apple: [
-    { url: " public/images/adpetlogo.jpeg" },
-    { url: " public/images/adpetlogo.jpeg", sizes: "180x180", type: "image/jpeg" },
-  ],
-},
+  icons: {
+    icon: [
+      { url: "/images/adpetlogo.jpeg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/images/adpetlogo.jpeg", sizes: "16x16", type: "image/jpeg" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/images/adpetlogo.jpeg", sizes: "180x180", type: "image/jpeg" },
+    ],
+  },
 };
 
 export default function RootLayout({
