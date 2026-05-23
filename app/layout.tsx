@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://your-project.vercel.app"; // replace with your actual domain
+const BASE_URL = "https://adpet.vercel.app"; // replace with your actual domain
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
