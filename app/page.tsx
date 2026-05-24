@@ -115,6 +115,40 @@ const SECTORS: Sector[] = [
   },
 ];
 
+// FIX 1: Single SOCIAL_LINKS constant — object array with real icons and URLs
+const SOCIAL_LINKS = [
+  {
+    id: "Li",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/company/adpet-investment",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    id: "X",
+    label: "X (Twitter)",
+    url: "https://x.com/adpetinvestments",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.26 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+      </svg>
+    ),
+  },
+  {
+    id: "IG",
+    label: "Instagram",
+    url: "https://www.instagram.com/adpet_investment_company_ltd?igsh=YXUyZmxzcmR0aTc3&utm_source=qr",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+      </svg>
+    ),
+  },
+] as const;
+
 const STATS: Stat[] = [
   { value: "4+", label: "Business Sectors" },
   { value: "RC", sublabel: "7202166", label: "CAC Registered" },
@@ -124,7 +158,7 @@ const STATS: Stat[] = [
 
 const CONTACT_ITEMS: ContactItem[] = [
   { icon: "📍", label: "Office Address", value: "Nigeria (Head Office)\nIbadan, Oyo State." },
-  { icon: "✉️", label: "Email", value: "enquiries@adpetinvestments.com" },
+  { icon: "✉️", label: "Email", value: "adpetinvestmentcompanyltd@gmail.com" },
   { icon: "📞", label: "Phone", value: "+2349138802127, +2349064593957" },
 ];
 
@@ -149,6 +183,8 @@ const MARQUEE_ITEMS = [
   "ADPET Investment Company",
   "RC: 7202166",
 ];
+
+const LEGAL_LINKS = ["Privacy Policy", "Terms of Service", "Cookie Policy"] as const;
 
 // ─────────────────────────────────────────────
 // GLOBAL STYLES
@@ -175,7 +211,6 @@ const GLOBAL_STYLES = `
 
   html { scroll-behavior: smooth; }
 
-  /* ── Keyframes ── */
   @keyframes floatOrb0 {
     0%,100% { transform: translate(-50%,-50%) translateY(0px)   scale(1);    }
     33%     { transform: translate(-50%,-50%) translateY(-28px) scale(1.04); }
@@ -207,9 +242,9 @@ const GLOBAL_STYLES = `
     to   { transform: translateX(-33.33%); }
   }
   @keyframes pulseRing {
-    0%   { transform: scale(0.95); box-shadow: 0 0 0 0   rgba(26,92,56,0.4); }
+    0%   { transform: scale(0.95); box-shadow: 0 0 0 0    rgba(26,92,56,0.4); }
     70%  { transform: scale(1);    box-shadow: 0 0 0 12px rgba(26,92,56,0);   }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0   rgba(26,92,56,0);   }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0    rgba(26,92,56,0);   }
   }
 
   .animate-fade-up    { animation: fadeUp 0.8s ease          forwards; }
@@ -228,7 +263,6 @@ const GLOBAL_STYLES = `
   }
   .divider { width: 100%; height: 1px; background: var(--border); }
 
-  /* ── Navbar links ── */
   .nav-link {
     position: relative;
     font-family: 'DM Sans', sans-serif;
@@ -248,7 +282,6 @@ const GLOBAL_STYLES = `
   .nav-link:hover::after { right: 0; }
   .nav-link:hover { color: var(--green) !important; }
 
-  /* ── Buttons ── */
   .btn-primary {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--green); color: white;
@@ -294,7 +327,6 @@ const GLOBAL_STYLES = `
   }
   .btn-outline:hover { background: var(--charcoal); color: white; transform: translateY(-1px); }
 
-  /* ── Sector cards ── */
   .sector-card {
     background: white; border: 1px solid var(--border);
     overflow: hidden; position: relative;
@@ -322,7 +354,6 @@ const GLOBAL_STYLES = `
   .sector-card .icon-wrap { color: var(--green); transition: transform 0.3s; }
   .sector-card:hover .icon-wrap { transform: scale(1.12); }
 
-  /* ── Tag pills ── */
   .tag-pill {
     display: inline-block;
     font-family: 'DM Sans', sans-serif; font-size: 0.62rem;
@@ -339,7 +370,6 @@ const GLOBAL_STYLES = `
     color: var(--green);
   }
 
-  /* ── Stats ── */
   .stat-item {
     text-align: center; padding: 2rem 1rem;
     border-right: 1px solid rgba(255,255,255,0.15);
@@ -348,7 +378,6 @@ const GLOBAL_STYLES = `
   .stat-item:last-child { border-right: none; }
   .stat-item:hover { background: rgba(255,255,255,0.06); }
 
-  /* ── Form fields ── */
   .form-field {
     width: 100%; background: transparent; border: none;
     border-bottom: 1px solid var(--border);
@@ -482,60 +511,62 @@ function Navbar({ scrolled, menuOpen, onMenuToggle, onScrollTo }: NavbarProps) {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background:    scrolled ? "rgba(248,246,241,0.96)" : "transparent",
-        backdropFilter:scrolled ? "blur(14px)" : "none",
-        borderBottom:  scrolled ? "1px solid var(--border)" : "none",
-        padding:       scrolled ? "0.75rem 0" : "1.25rem 0",
+        background:     scrolled ? "rgba(248,246,241,0.96)" : "transparent",
+        backdropFilter: scrolled ? "blur(14px)" : "none",
+        borderBottom:   scrolled ? "1px solid var(--border)" : "none",
+        padding:        scrolled ? "0.75rem 0" : "1.25rem 0",
       }}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between">
+
         {/* Logo */}
         <button onClick={() => onScrollTo("home")} className="flex items-center gap-3 group">
-  {/* Logo mark — image fills the box, "AD" shows only if image fails */}
-  <div
-    className="w-10 h-10 rounded-sm overflow-hidden flex items-center justify-center shrink-0 transition-transform group-hover:scale-105"
-    style={{ background: "var(--green)" }}
-  >
-    <img
-      src="images/adpetlogo.jpeg"
-      alt="ADPET logo"
-      className="w-full h-full object-cover"
-      onError={(e) => {
-        e.currentTarget.style.display = "none";
-        e.currentTarget.nextElementSibling?.removeAttribute("hidden");
-      }}
-    />
-    <span
-      hidden
-      className="text-white text-xs font-bold"
-      style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.05em" }}
-    >
-      AD
-    </span>
-  </div>
-
-  {/* Wordmark */}
-  <div className="hidden sm:flex flex-col justify-center leading-none">
-    <span
-      className="font-display text-[1.05rem] font-600 leading-tight tracking-wide"
-      style={{ color: scrolled ? "var(--charcoal)" : "white" }}
-    >
-      ADPET
-    </span>
-    <span
-      className="font-body text-[0.58rem] uppercase tracking-[0.18em] mt-0.5"
-      style={{ color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.55)" }}
-    >
-      Investment Co.
-    </span>
-  </div>
-</button>
+          <div
+            className="w-10 h-10 rounded-sm overflow-hidden flex items-center justify-center shrink-0 transition-transform group-hover:scale-105"
+            style={{ background: "var(--green)" }}
+          >
+            {/* FIX 3: leading slash on image src */}
+            <img
+              src="/images/adpetlogo.jpeg"
+              alt="ADPET logo"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+                (e.currentTarget.nextElementSibling as HTMLElement | null)?.removeAttribute("hidden");
+              }}
+            />
+            <span
+              hidden
+              className="text-white text-xs font-bold"
+              style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.05em" }}
+            >
+              AD
+            </span>
+          </div>
+          <div className="hidden sm:flex flex-col justify-center leading-none">
+            <span
+              className="font-display text-[1.05rem] font-600 leading-tight tracking-wide"
+              style={{ color: scrolled ? "var(--charcoal)" : "white" }}
+            >
+              ADPET
+            </span>
+            <span
+              className="font-body text-[0.58rem] uppercase tracking-[0.18em] mt-0.5"
+              style={{ color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.55)" }}
+            >
+              Investment Co.
+            </span>
+          </div>
+        </button>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <button key={link} onClick={() => onScrollTo(link.toLowerCase())}
-              className={`nav-link ${scrolled ? "scrolled" : ""}`}>
+            <button
+              key={link}
+              onClick={() => onScrollTo(link.toLowerCase())}
+              className={`nav-link ${scrolled ? "scrolled" : ""}`}
+            >
               {link}
             </button>
           ))}
@@ -585,7 +616,10 @@ function Navbar({ scrolled, menuOpen, onMenuToggle, onScrollTo }: NavbarProps) {
                 {link}
               </button>
             ))}
-            <button className="btn-primary w-full justify-center mt-2" onClick={() => onScrollTo("contact")}>
+            <button
+              className="btn-primary w-full justify-center mt-2"
+              onClick={() => onScrollTo("contact")}
+            >
               Enquire Now
             </button>
           </div>
@@ -620,7 +654,6 @@ const HERO_RINGS = [
 function HeroSection({ parallax, onScrollTo }: HeroProps) {
   return (
     <section id="home" className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background image with parallax */}
       <div className="absolute inset-0" style={{ zIndex: 0 }}>
         <img
           src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85"
@@ -637,7 +670,6 @@ function HeroSection({ parallax, onScrollTo }: HeroProps) {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(26,92,56,0.25) 0%, transparent 60%)" }} />
       </div>
 
-      {/* Floating orbs overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         {HERO_ORBS.map((o, i) => (
           <div key={i} style={{
@@ -660,7 +692,6 @@ function HeroSection({ parallax, onScrollTo }: HeroProps) {
         ))}
       </div>
 
-      {/* Content */}
       <div
         className="relative max-w-7xl mx-auto px-5 md:px-10 w-full flex-1 flex flex-col justify-center pt-32 pb-28 md:pt-40 md:pb-36"
         style={{ zIndex: 2 }}
@@ -851,7 +882,6 @@ function AboutSection() {
       <FloatingOrbs variant="light" />
       <FloatingShapes variant="light" />
 
-      {/* Decorative background text */}
       <div
         className="absolute font-display select-none pointer-events-none"
         style={{
@@ -866,7 +896,6 @@ function AboutSection() {
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 relative" style={{ zIndex: 1 }}>
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
-          {/* Left column */}
           <div className="md:col-span-5">
             <div className="section-line" />
             <p className="font-body text-xs uppercase tracking-widest mb-4" style={{ color: "var(--green)" }}>
@@ -877,7 +906,6 @@ function AboutSection() {
               <em style={{ color: "var(--green)", fontStyle: "italic" }}>Investment.</em>
             </h2>
 
-            {/* Photo block */}
             <div className="relative rounded-sm overflow-hidden" style={{ height: 320 }}>
               <img
                 src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=700&q=80"
@@ -903,7 +931,6 @@ function AboutSection() {
             </div>
           </div>
 
-          {/* Right column */}
           <div className="md:col-span-7">
             <p className="font-body leading-loose mb-6" style={{ fontSize: "1.05rem", color: "var(--charcoal)", fontWeight: 300 }}>
               ADPET Investment Company Nigeria Limited is a premier, multi-disciplinary
@@ -914,12 +941,12 @@ function AboutSection() {
             <p className="font-body leading-loose mb-6" style={{ fontSize: "0.95rem", color: "var(--text-muted)", fontWeight: 300 }}>
               Our founding principle is simple: every sector we enter, we serve with uncompromising
               quality. From luxury property development to high-grade building materials, premium
-              automobile services to large-scale corporate procurement ADPET brings institutional
+              automobile services to large-scale corporate procurement — ADPET brings institutional
               rigour, commercial agility, and an unwavering commitment to client satisfaction.
             </p>
             <p className="font-body leading-loose" style={{ fontSize: "0.95rem", color: "var(--text-muted)", fontWeight: 300 }}>
               Wholly Nigerian-owned and operated, we are proud contributors to Nigeria's economic
-              growth building infrastructure, enabling trade, and creating lasting value for our
+              growth — building infrastructure, enabling trade, and creating lasting value for our
               clients, partners, and communities.
             </p>
 
@@ -938,7 +965,6 @@ function AboutSection() {
               ))}
             </div>
 
-            {/* Image strip */}
             <div className="mt-8 grid grid-cols-3 gap-3">
               {ABOUT_IMAGES.map((src, i) => (
                 <div key={i} className="overflow-hidden rounded-sm" style={{ height: 100 }}>
@@ -990,7 +1016,6 @@ function ContactSection({ formState, submitted, onFormChange, onSubmit }: Contac
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 relative" style={{ zIndex: 1 }}>
         <div className="grid md:grid-cols-12 gap-14 md:gap-20">
-          {/* Left */}
           <div className="md:col-span-5">
             <div className="section-line" />
             <p className="font-body text-xs uppercase tracking-widest mb-4" style={{ color: "var(--green)" }}>
@@ -1002,7 +1027,7 @@ function ContactSection({ formState, submitted, onFormChange, onSubmit }: Contac
             </h2>
             <p className="font-body leading-relaxed mb-10" style={{ fontSize: "0.9rem", color: "var(--text-muted)", fontWeight: 300 }}>
               Whether you're exploring investment opportunities, seeking construction materials,
-              or looking for automotive solutions our team is ready to assist you.
+              or looking for automotive solutions — our team is ready to assist you.
             </p>
 
             <div className="flex flex-col gap-6 mb-10">
@@ -1032,7 +1057,6 @@ function ContactSection({ formState, submitted, onFormChange, onSubmit }: Contac
             </div>
           </div>
 
-          {/* Right: Form */}
           <div className="md:col-span-7">
             <div className="rounded-sm p-8 md:p-12" style={{ background: "white", border: "1px solid var(--border)", boxShadow: "0 4px 40px rgba(0,0,0,0.06)" }}>
               {submitted ? (
@@ -1090,10 +1114,10 @@ function ContactSection({ formState, submitted, onFormChange, onSubmit }: Contac
                         onChange={(e) => onFormChange({ sector: e.target.value })}
                       >
                         <option value="">Select a sector</option>
-                        <option>Real Estate & Property Development</option>
+                        <option>Real Estate &amp; Property Development</option>
                         <option>Building Materials</option>
                         <option>Automobile Division</option>
-                        <option>General Contracts & Merchandise</option>
+                        <option>General Contracts &amp; Merchandise</option>
                         <option>General Enquiry</option>
                       </select>
                     </div>
@@ -1133,9 +1157,6 @@ interface FooterProps {
   onScrollTo: (id: string) => void;
 }
 
-const SOCIAL_LINKS = ["Li", "X", "IG"] as const;
-const LEGAL_LINKS = ["Privacy Policy", "Terms of Service", "Cookie Policy"] as const;
-
 function Footer({ onScrollTo }: FooterProps) {
   return (
     <footer style={{ background: "var(--charcoal)", color: "rgba(255,255,255,0.7)", position: "relative", overflow: "hidden" }}>
@@ -1151,56 +1172,68 @@ function Footer({ onScrollTo }: FooterProps) {
 
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-16 relative" style={{ zIndex: 1 }}>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
           {/* Brand column */}
           <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-  {/* Logo mark */}
-  <div
-    className="w-10 h-10 rounded-sm overflow-hidden flex items-center justify-center shrink-0"
-    style={{ background: "var(--green)" }}
-  >
-    <img
-      src="images/adpetlogo.jpeg"
-      alt="ADPET logo"
-      className="w-full h-full object-cover"
-      onError={(e) => {
-        e.currentTarget.style.display = "none";
-        e.currentTarget.nextElementSibling?.removeAttribute("hidden");
-      }}
-    />
-    <span
-      hidden
-      className="text-white text-xs font-bold"
-      style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.05em" }}
-    >
-      AD
-    </span>
-  </div>
+              <div
+                className="w-10 h-10 rounded-sm overflow-hidden flex items-center justify-center shrink-0"
+                style={{ background: "var(--green)" }}
+              >
+                {/* FIX 3: leading slash on image src */}
+                <img
+                  src="/images/adpetlogo.jpeg"
+                  alt="ADPET logo"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                    (e.currentTarget.nextElementSibling as HTMLElement | null)?.removeAttribute("hidden");
+                  }}
+                />
+                <span
+                  hidden
+                  className="text-white text-xs font-bold"
+                  style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.05em" }}
+                >
+                  AD
+                </span>
+              </div>
+              <div className="flex flex-col justify-center leading-none">
+                <span className="font-display text-white text-[1.05rem] font-500 leading-tight tracking-wide">
+                  ADPET
+                </span>
+                <span className="font-body text-[0.58rem] uppercase tracking-[0.18em] mt-0.5 opacity-50">
+                  Investment Co.
+                </span>
+              </div>
+            </div>
 
-  {/* Wordmark */}
-  <div className="flex flex-col justify-center leading-none">
-    <span className="font-display text-white text-[1.05rem] font-500 leading-tight tracking-wide">
-      ADPET
-    </span>
-    <span className="font-body text-[0.58rem] uppercase tracking-[0.18em] mt-0.5 opacity-50">
-      Investment Co.
-    </span>
-  </div>
-</div>
             <p className="font-body text-xs leading-relaxed mb-5 opacity-60">
               Premier multi-disciplinary investment company delivering excellence across Nigeria's key economic sectors.
             </p>
+
+            {/* FIX 2: Correct <a> opening tag, no duplicate SOCIAL_LINKS */}
             <div className="flex gap-3">
               {SOCIAL_LINKS.map((s) => (
-                <div
-                  key={s}
-                  className="w-8 h-8 rounded-sm border flex items-center justify-center font-body text-xs cursor-pointer transition-all"
-                  style={{ borderColor: "rgba(255,255,255,0.2)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--green)"; e.currentTarget.style.color = "#6ec991"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; e.currentTarget.style.color = ""; }}
+                <a
+                  key={s.id}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="w-8 h-8 rounded-sm border flex items-center justify-center cursor-pointer transition-all"
+                  style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.6)" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "var(--green)";
+                    e.currentTarget.style.color = "#6ec991";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+                    e.currentTarget.style.color = "rgba(255,255,255,0.6)";
+                  }}
                 >
-                  {s}
-                </div>
+                  {s.icon}
+                </a>
               ))}
             </div>
           </div>
@@ -1210,8 +1243,11 @@ function Footer({ onScrollTo }: FooterProps) {
             <div className="font-body text-xs uppercase tracking-widest mb-5 text-white">Navigate</div>
             <div className="flex flex-col gap-3">
               {NAV_LINKS.map((link) => (
-                <button key={link} onClick={() => onScrollTo(link.toLowerCase())}
-                  className="font-body text-sm text-left opacity-60 hover:opacity-100 transition-opacity">
+                <button
+                  key={link}
+                  onClick={() => onScrollTo(link.toLowerCase())}
+                  className="font-body text-sm text-left opacity-60 hover:opacity-100 transition-opacity"
+                >
                   {link}
                 </button>
               ))}
@@ -1223,8 +1259,11 @@ function Footer({ onScrollTo }: FooterProps) {
             <div className="font-body text-xs uppercase tracking-widest mb-5 text-white">Sectors</div>
             <div className="flex flex-col gap-3">
               {SECTORS.map((s) => (
-                <button key={s.id} onClick={() => onScrollTo("sectors")}
-                  className="font-body text-sm text-left opacity-60 hover:opacity-100 transition-opacity">
+                <button
+                  key={s.id}
+                  onClick={() => onScrollTo("sectors")}
+                  className="font-body text-sm text-left opacity-60 hover:opacity-100 transition-opacity"
+                >
                   {s.label}
                 </button>
               ))}
@@ -1236,13 +1275,16 @@ function Footer({ onScrollTo }: FooterProps) {
             <div className="font-body text-xs uppercase tracking-widest mb-5 text-white">Legal</div>
             <div className="flex flex-col gap-3">
               {LEGAL_LINKS.map((l) => (
-                <a key={l} href="#" onClick={(e) => e.preventDefault()}
-                  className="font-body text-sm opacity-60 hover:opacity-100 transition-opacity">
+                <a
+                  key={l}
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="font-body text-sm opacity-60 hover:opacity-100 transition-opacity"
+                >
                   {l}
                 </a>
               ))}
             </div>
-            
           </div>
         </div>
 
@@ -1253,6 +1295,7 @@ function Footer({ onScrollTo }: FooterProps) {
           <div className="font-body text-xs opacity-40">
             © {new Date().getFullYear()} ADPET Investment Company Nigeria Limited. All rights reserved.
           </div>
+          <div className="font-body text-xs opacity-40">RC: 7202166 · Registered in Nigeria</div>
         </div>
       </div>
     </footer>
@@ -1264,11 +1307,11 @@ function Footer({ onScrollTo }: FooterProps) {
 // ─────────────────────────────────────────────
 
 export default function ADPETLanding() {
-  const [menuOpen,   setMenuOpen]   = useState(false);
-  const [scrolled,   setScrolled]   = useState(false);
-  const [parallax,   setParallax]   = useState(0);
-  const [submitted,  setSubmitted]  = useState(false);
-  const [formState,  setFormState]  = useState<FormState>({ name: "", email: "", sector: "", message: "" });
+  const [menuOpen,  setMenuOpen]  = useState(false);
+  const [scrolled,  setScrolled]  = useState(false);
+  const [parallax,  setParallax]  = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [formState, setFormState] = useState<FormState>({ name: "", email: "", sector: "", message: "" });
 
   useEffect(() => {
     const handleScroll = () => {
