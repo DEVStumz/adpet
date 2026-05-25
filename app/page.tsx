@@ -57,7 +57,7 @@ const SECTORS: Sector[] = [
     description:
       "Luxury residential estates, commercial developments, and property sales. We deliver exceptional real estate solutions tailored to discerning clients across Nigeria.",
     tags: ["Luxury Homes", "Commercial Spaces", "Land Sales", "Property Mgmt"],
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80",
+    img: "/images/development.png",
   },
   {
     id: "materials",
@@ -74,7 +74,7 @@ const SECTORS: Sector[] = [
     description:
       "Production and wholesale distribution of premium, certified building materials. Supplying the industry with quality inputs that define structural excellence.",
     tags: ["Cement & Steel", "Roofing Systems", "Finishing Materials", "Bulk Supply"],
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
+    img: "/images/property.jpg",
   },
   {
     id: "automobile",
@@ -92,7 +92,7 @@ const SECTORS: Sector[] = [
     description:
       "Authorised dealership, automotive care centre, and genuine spare parts distribution. A one-stop automotive destination for fleet and personal vehicle needs.",
     tags: ["Car Dealership", "Auto Care", "Spare Parts", "Fleet Solutions"],
-    img: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&q=80",
+    img: "/images/carstand.jpg",
   },
   {
     id: "contracts",
@@ -111,7 +111,7 @@ const SECTORS: Sector[] = [
     description:
       "Comprehensive general contracting, merchandise trading, and large-scale corporate procurement. Bridging supply chains with strategic precision and reliability.",
     tags: ["Global Trading", "General Goods", "Corporate Procurement", "Logistics"],
-    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80",
+    img: "/images/deal.jpg",
   },
 ];
 
@@ -170,9 +170,9 @@ const ABOUT_FACTS = [
 ];
 
 const ABOUT_IMAGES = [
-  "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&q=75",
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&q=75",
-  "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400&q=75",
+  "/images/car.jpg",
+  "/images/construction.jpg",
+  "/images/repair.jpg",
 ];
 
 const MARQUEE_ITEMS = [
@@ -908,9 +908,9 @@ function AboutSection() {
 
             <div className="relative rounded-sm overflow-hidden" style={{ height: 320 }}>
               <img
-                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=700&q=80"
+                src="/images/ceo.jpg"
                 alt="ADPET corporate office"
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                style={{ width: "100%", height: "160%", objectFit: "cover", display: "block" }}
               />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,32,20,0.6) 0%, transparent 60%)" }} />
               <div style={{ position: "absolute", bottom: "1.25rem", left: "1.25rem" }}>
@@ -941,12 +941,12 @@ function AboutSection() {
             <p className="font-body leading-loose mb-6" style={{ fontSize: "0.95rem", color: "var(--text-muted)", fontWeight: 300 }}>
               Our founding principle is simple: every sector we enter, we serve with uncompromising
               quality. From luxury property development to high-grade building materials, premium
-              automobile services to large-scale corporate procurement — ADPET brings institutional
+              automobile services to large-scale corporate procurement ADPET brings institutional
               rigour, commercial agility, and an unwavering commitment to client satisfaction.
             </p>
             <p className="font-body leading-loose" style={{ fontSize: "0.95rem", color: "var(--text-muted)", fontWeight: 300 }}>
-              Wholly Nigerian-owned and operated, we are proud contributors to Nigeria's economic
-              growth — building infrastructure, enabling trade, and creating lasting value for our
+              Wholly Nigerian owned and operated, we are proud contributors to Nigeria's economic
+              growth building infrastructure, enabling trade, and creating lasting value for our
               clients, partners, and communities.
             </p>
 
@@ -1027,7 +1027,7 @@ function ContactSection({ formState, submitted, onFormChange, onSubmit }: Contac
             </h2>
             <p className="font-body leading-relaxed mb-10" style={{ fontSize: "0.9rem", color: "var(--text-muted)", fontWeight: 300 }}>
               Whether you're exploring investment opportunities, seeking construction materials,
-              or looking for automotive solutions — our team is ready to assist you.
+              or looking for automotive solutions our team is ready to assist you.
             </p>
 
             <div className="flex flex-col gap-6 mb-10">
@@ -1050,7 +1050,7 @@ function ContactSection({ formState, submitted, onFormChange, onSubmit }: Contac
 
             <div className="rounded-sm overflow-hidden" style={{ height: 200 }}>
               <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80"
+                src="/images/coperate profile.jpg"
                 alt="ADPET team"
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
