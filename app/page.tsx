@@ -153,7 +153,7 @@ const STATS: Stat[] = [
   { value: "4+", label: "Business Sectors" },
   { value: "RC", sublabel: "7202166", label: "CAC Registered" },
   { value: "100%", label: "Nigerian Owned" },
-  { value: "₦B+", label: "Assets Under Mgmt" },
+  { value: "₦350 Million+", label: "Assets Under Mgmt" },
 ];
 
 const CONTACT_ITEMS: ContactItem[] = [
@@ -1295,7 +1295,6 @@ function Footer({ onScrollTo }: FooterProps) {
           <div className="font-body text-xs opacity-40">
             © {new Date().getFullYear()} ADPET Investment Company Nigeria Limited. All rights reserved.
           </div>
-          <div className="font-body text-xs opacity-40">RC: 7202166 · Registered in Nigeria</div>
         </div>
       </div>
     </footer>
