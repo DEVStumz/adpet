@@ -506,128 +506,7 @@ interface NavbarProps {
   onScrollTo: (id: string) => void;
 }
 
-function Navbar({ scrolled, menuOpen, onMenuToggle, onScrollTo }: NavbarProps) {
-  return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background:     scrolled ? "rgba(248,246,241,0.96)" : "transparent",
-        backdropFilter: scrolled ? "blur(14px)" : "none",
-        borderBottom:   scrolled ? "1px solid var(--border)" : "none",
-        padding:        scrolled ? "0.75rem 0" : "1.25rem 0",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between">
 
-        {/* Logo */}
-        <button onClick={() => onScrollTo("home")} className="flex items-center gap-3 group">
-          <div
-            className="w-10 h-10 rounded-sm overflow-hidden flex items-center justify-center shrink-0 transition-transform group-hover:scale-105"
-            style={{ background: "var(--green)" }}
-          >
-            {/* FIX 3: leading slash on image src */}
-            <img
-              src="/images/adpetlogo.jpeg"
-              alt="ADPET logo"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-                (e.currentTarget.nextElementSibling as HTMLElement | null)?.removeAttribute("hidden");
-              }}
-            />
-            <span
-              hidden
-              className="text-white text-xs font-bold"
-              style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.05em" }}
-            >
-              AD
-            </span>
-          </div>
-          <div className="hidden sm:flex flex-col justify-center leading-none">
-            <span
-              className="font-display text-[1.05rem] font-600 leading-tight tracking-wide"
-              style={{ color: scrolled ? "var(--charcoal)" : "white" }}
-            >
-              ADPET
-            </span>
-            <span
-              className="font-body text-[0.58rem] uppercase tracking-[0.18em] mt-0.5"
-              style={{ color: scrolled ? "var(--text-muted)" : "rgba(255,255,255,0.55)" }}
-            >
-              Investment Co.
-            </span>
-          </div>
-        </button>
-
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <button
-              key={link}
-              onClick={() => onScrollTo(link.toLowerCase())}
-              className={`nav-link ${scrolled ? "scrolled" : ""}`}
-            >
-              {link}
-            </button>
-          ))}
-        </div>
-
-        {/* CTA + hamburger */}
-        <div className="flex items-center gap-3">
-          <button
-            className={`hidden sm:inline-flex ${scrolled ? "btn-primary" : "btn-ghost"}`}
-            style={{ borderRadius: 0 }}
-            onClick={() => onScrollTo("contact")}
-          >
-            Enquire Now
-          </button>
-          <button className="md:hidden p-2" onClick={onMenuToggle} aria-label="Toggle menu">
-            <div className="w-5 flex flex-col gap-1.5">
-              {([0, 1, 2] as const).map((i) => (
-                <span
-                  key={i}
-                  className="block h-px transition-all duration-300"
-                  style={{
-                    background: scrolled ? "var(--charcoal)" : "white",
-                    transform:
-                      i === 0 && menuOpen ? "rotate(45deg) translate(4px,4px)"
-                      : i === 2 && menuOpen ? "rotate(-45deg) translate(4px,-4px)"
-                      : "none",
-                    opacity: i === 1 && menuOpen ? 0 : 1,
-                  }}
-                />
-              ))}
-            </div>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile drawer */}
-      {menuOpen && (
-        <div className="md:hidden border-t" style={{ background: "rgba(248,246,241,0.98)", borderColor: "var(--border)" }}>
-          <div className="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-4">
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link}
-                onClick={() => onScrollTo(link.toLowerCase())}
-                className="font-body text-xs uppercase tracking-widest text-left py-2"
-                style={{ color: "var(--charcoal)" }}
-              >
-                {link}
-              </button>
-            ))}
-            <button
-              className="btn-primary w-full justify-center mt-2"
-              onClick={() => onScrollTo("contact")}
-            >
-              Enquire Now
-            </button>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
-}
 
 // ─────────────────────────────────────────────
 // HERO
@@ -1339,12 +1218,7 @@ export default function ADPETLanding() {
     <div className="font-sans bg-[#f8f6f1] text-[#1a1a1a] min-h-screen overflow-x-hidden">
       <style>{GLOBAL_STYLES}</style>
 
-      <Navbar
-        scrolled={scrolled}
-        menuOpen={menuOpen}
-        onMenuToggle={() => setMenuOpen((v) => !v)}
-        onScrollTo={scrollTo}
-      />
+     
 
       <HeroSection parallax={parallax} onScrollTo={scrollTo} />
       <StatsBand />
