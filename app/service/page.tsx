@@ -150,7 +150,7 @@ const SERVICES = [
     bullets: ["Luxury residential estates & duplexes", "Commercial plazas & office complexes", "Land subdivision & estate planning", "Off-plan investment opportunities"],
     cta: "Browse Properties",
     ctaLink: "/sales?cat=House",
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+    img: "/images/supply.jpg",
   },
   {
     id: "automobile",
@@ -162,7 +162,7 @@ const SERVICES = [
     bullets: ["New & certified pre-owned vehicles", "Full vehicle servicing & diagnostics", "Genuine OEM spare parts supply", "Fleet procurement & management"],
     cta: "Browse Cars",
     ctaLink: "/sales?cat=Car",
-    img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80",
+    img: "images/autocare.jpeg",
   },
   {
     id: "materials",
@@ -174,7 +174,7 @@ const SERVICES = [
     bullets: ["Cement, rebar & structural steel", "Premium roofing systems", "Tiles, paints & finishing materials", "Bulk & wholesale distribution"],
     cta: "Request a Quote",
     ctaLink: "/#contact",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
   {
     id: "contracts",
