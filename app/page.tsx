@@ -153,7 +153,7 @@ const STATS: Stat[] = [
   { value: "4+", label: "Business Sectors" },
   { value: "RC", sublabel: "7202166", label: "CAC Registered" },
   { value: "100%", label: "Nigerian Owned" },
-  { value: "₦350 Million+", label: "Assets Under Mgmt" },
+  { value: "₦500M+", label: "Assets Under Mgmt" },
 ];
 
 const CONTACT_ITEMS: ContactItem[] = [
