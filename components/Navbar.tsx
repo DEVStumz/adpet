@@ -180,16 +180,18 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
+            <Link
+              href="/#contact"
+              className={scrolled ? "btn-nav-primary" : "btn-nav-ghost"}
+              style={{marginLeft: 150}}
+            >
+              Enquire Now
+            </Link>
           </div>
 
           {/* ── CTA + hamburger ── */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <Link
-              href="/#contact"
-              className={scrolled ? "btn-nav-primary" : "btn-nav-ghost"}
-            >
-              Enquire Now
-            </Link>
+            
 
             {/* Hamburger — visible only on mobile via CSS */}
             <button

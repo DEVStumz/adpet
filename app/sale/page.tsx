@@ -226,7 +226,7 @@ const PhoneIcon = () => (
 const LISTINGS = [
   { id:1,  cat:"Land",       badge:"HOT",        badgeBg:"#c0392b", title:"Iseyin Hills and Resort –  Ibadan Express Way",  loc:"Iseyin, Oyo State",    price:"₦5,000,000",     detail:"450 sqm | Residential #5m | Commercial #7m",      desc:"Strategically located commercial land with C-of-O title. Ideal for hotel, Sport Complex, Amuzement Park, Event Center or mixed-use development.",               tags:["C-of-O","Commercial","Residential"],         img:"images/land 1.jpeg", phone:"+2349138802127" },
   { id:2,  cat:"Land",       badge:"NEW",        badgeBg:"#1a5c38", title:"1 Plot Residential Estate Land",  loc:"Moniya, Ibadan, Oyo State",      price:"₦7,000,000",     detail:"450 sqm",        desc:" 5 Blocks height fenced with full government approvals. Developed area with Road, drainage and electricity already in place, 5 minutes drive to Moniya Train Station.",                      tags:["Approved","Residential","Gated"],             img:"images/land 2.jpeg", phone:"+2349138802127" },
-  { id:3,  cat:"Land",       badge:"SALE",       badgeBg:"#7d6608", title:"Agricultural Land – Ibarapa Zone",           loc:"Ibarapa, Oyo State",              price:"₦6,500,000",      detail:"5 acres",        desc:"Fertile farmland with year-round water access. Perfect for large-scale cultivation or agri-investment.",                   tags:["Farmland","Water Access","Survey Done"],      img:"https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80", phone:"+2349064593957" },
+  { id:3,  cat:"Land",       badge:"SALE",       badgeBg:"#7d6608", title:" 1 Plot of Residential Land – Moganna Area",           loc:"Oluyole extension, Ibadan, Oyo State ",              price:"₦9,000,000",      detail:"465 sqm",        desc:" Residetial land with close access to main road, making it easily accessible for various uses.",                   tags:["Residential Potential","C-of-O","Survey Done"],      img:"images/land 3.jpeg", phone:"+2349064593957" },
   //{ id:4,  cat:"House",      badge:"LUXURY",     badgeBg:"#7d6608", title:"5-Bedroom Detached Duplex – Bodija",         loc:"Bodija Estate, Ibadan",           price:"₦320,000,000",    detail:"450 sqm built",  desc:"Contemporary luxury duplex with BQ, smart home wiring, dual water treatment, and full solar backup.",                      tags:["Smart Home","Solar","BQ Inclusive"],          img:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80", phone:"+2349138802127" },
   //{ id:5,  cat:"House",      badge:"SALE",       badgeBg:"#1a5c38", title:"3-Bedroom Terrace – Moniya GRA",             loc:"Moniya GRA, Ibadan",              price:"₦58,000,000",     detail:"180 sqm",        desc:"Modern terrace with fitted kitchen, POP ceilings, 24/7 CCTV and estate access control.",                                  tags:["Fitted Kitchen","POP","Security Estate"],     img:"https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80", phone:"+2349064593957" },
   //{ id:6,  cat:"House",      badge:"NEW",        badgeBg:"#1a5c38", title:"4-Bedroom Semi-Detached – Oluyole",          loc:"Oluyole Estate, Ibadan",          price:"₦95,000,000",     detail:"260 sqm",        desc:"Newly built semi-detached with Jacuzzi, tiled compound, 2 covered parking slots and backup generator.",                   tags:["New Build","Generator","Jacuzzi"],            img:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80", phone:"+2349138802127" },
@@ -372,7 +372,7 @@ export default function SalesPage() {
       {/* ── HERO ───────────────────────────────────────────────────────────── */}
       <section style={{ position: "relative", overflow: "hidden", minHeight: 500, display: "flex", alignItems: "flex-end" }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85" alt="" style={{ width: "100%", height: "115%", objectFit: "cover", objectPosition: "center 30%", transform: `translateY(${scroll}px)`, display: "block" }} />
+          <img src="https://hips.hearstapps.com/hmg-prod/images/01-2025-honda-civic-sedan-sport-touring-hybrid-67e7f55ddd5d9.jpg?crop=1xw:0.9167500834167501xh;center,top" alt="" style={{ width: "100%", height: "115%", objectFit: "cover", objectPosition: "center 30%", transform: `translateY(${scroll}px)`, display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,rgba(10,32,20,0.88) 0%,rgba(10,32,20,0.62) 50%,rgba(10,32,20,0.4) 100%)" }} />
           <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 180, background: "linear-gradient(to bottom,transparent,var(--off-white))" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,rgba(26,92,56,0.22) 0%,transparent 65%)" }} />
@@ -392,7 +392,7 @@ export default function SalesPage() {
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <a href="#listings" className="s-btn-green">Browse Listings ↓</a>
-            <Link href="/services" className="s-btn-ghost">Our Services →</Link>
+            <Link href="/service" className="s-btn-ghost">Our Services →</Link>
           </div>
         </div>
       </section>
