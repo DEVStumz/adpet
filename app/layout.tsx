@@ -1,14 +1,15 @@
-// app/layout.tsx — REPLACE your existing one with this
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar"; // ← "component" no "s" — matches YOUR folder name
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
+
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const BASE_URL = "https://adpet.vercel.app";
+const BASE_URL = "https://www.adpetinvestmentcompany.com.ng/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
