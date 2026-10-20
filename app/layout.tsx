@@ -55,6 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <Navbar />
         <main>{children}</main>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
